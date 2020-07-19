@@ -104,7 +104,7 @@ int countLines(std::ifstream& ifs)
 void ask(std::string& n)
 {
 	std::cout<<std::endl<<"\n*************************************"<<std::endl;
-	std::cout<<"\n What do You want to do? (write ""help"" in order to visualize the possible entries) \n";
+	std::cout<<"\n What would you like to do? (write ""help"" in order to visualize the possible entries) \n";
 	std::getline(std::cin, n);
 }
 
@@ -158,7 +158,7 @@ void check(std::string n, Movies_Collection moviesCollection, Actors_Collection 
 	{
 		std::string searchName;
 		std::cout<<"***************************\n";
-		std::cout<<"WHAT DO YOU WANT TO FIND?\n";
+		std::cout<<"WHAT WOULD YOU LIKE TO FIND?\n";
 		std::getline(std::cin, searchName);
 		searchByName(searchName, moviesCollection, addenda);
 	}
