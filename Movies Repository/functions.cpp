@@ -104,7 +104,7 @@ int countLines(std::ifstream& ifs)
 void ask(std::string& n)
 {
 	std::cout<<std::endl<<"\n*************************************"<<std::endl;
-	std::cout<<"\n Cosa vuoi fare? (scrivi ""help"" per visualizzare i comandi) \n";
+	std::cout<<"\n What do You want to do? (write ""help"" in order to visualize the possible entries) \n";
 	std::getline(std::cin, n);
 }
 
@@ -128,27 +128,27 @@ void check(std::string n, Movies_Collection moviesCollection, Actors_Collection 
 	if(n == "help")
 	{
 		std::cout<<"\n*********** HELP ***********\n\n";
-		std::cout<<"0 --> Termina il programma;\n";
-		std::cout<<"1 --> Visualizza i film in ordine alfabetico;\n";
-		std::cout<<"2 --> Visualizza i film in ordine di uscita;\n";
-		std::cout<<"sbn --> \"SearchByName\" = Cerca film per nome; \n";
-		std::cout<<"sby --> \"SearchByYear\" = Cerca film per anno di uscita; \n";
-		std::cout<<"sbg --> \"SearchByGenre\" = Cerca film per Genere;\n";
-		std::cout<<"sba --> \"SearchByActor\" = Cerca film in cui e' presente l'attore scelto;\n";
-		std::cout<<"sbc --> \"SearchByCharacter\" = Cerca film in cui e' presente il personaggio scelto;\n";
-		std::cout<<"sa --> \"SearchActor\" = Cerca attore, con film e personaggi che ha interpretato;\n";
-		std::cout<<"r --> \"Random\" = Estrai film casuale;\n";
-		std::cout<<"rbg --> \"RandomByGenre\" = Estrai film casuale contenente il dato genere; \n";
-		std::cout<<"rnw --> \"RandomNotWatched\" = Estrai un film casuale tra quelli non visti; \n";
-		std::cout<<"stat --> Visualizza statistiche;\n";
-		std::cout<<"act --> Visualizza tutti gli attori con i film e ruoli interpretati;\n";
-		std::cout<<"\n------- Aggiungi una virgola piu' una delle seguenti (si possono concatenare) -------\n\n";
-		std::cout<<"y --> \"Year\" = Visualizza anche l'anno del film;\n";
-		std::cout<<"g --> \"Genre\" = Visualizza anche i generi a cui appartiene il film;\n";
-		std::cout<<"p --> \"Plot\" = Visualizza anche la trama del film;\n";
-		std::cout<<"a --> \"Actors\" = Visualizza anche gli attori famosi;\n";
-		std::cout<<"w --> \"Watched\" = Visualizza solo i film non visti;\n";
-		std::cout<<"all --> Visualizza tutte le caratteristiche del film;\n";
+		std::cout<<"0 --> Quit the program;\n";
+		std::cout<<"1 --> Show movies in alphabetical order;\n";
+		std::cout<<"2 --> Show movies in year of production order;\n";
+		std::cout<<"sbn --> \"SearchByName\" = Search movie by name; \n";
+		std::cout<<"sby --> \"SearchByYear\" = Search movie by year of production; \n";
+		std::cout<<"sbg --> \"SearchByGenre\" = Searc movie by genre;\n";
+		std::cout<<"sba --> \"SearchByActor\" = Search movies in which the selected actor is present;\n";
+		std::cout<<"sbc --> \"SearchByCharacter\" = Search movies in which the selected fictional character is present;\n";
+		std::cout<<"sa --> \"SearchActor\" = Search actor, with movies and characters interpreted;\n";
+		std::cout<<"r --> \"Random\" = Extract random movie;\n";
+		std::cout<<"rbg --> \"RandomByGenre\" = Extract random movie of the selected genre; \n";
+		std::cout<<"rnw --> \"RandomNotWatched\" = Extract random movie from -not watched- ones; \n";
+		std::cout<<"stat --> Show Statistics;\n";
+		std::cout<<"act --> Show all actors and roles interpred;\n";
+		std::cout<<"\n------- Add a comma and one of the following (with possibile concatenation) -------\n\n";
+		std::cout<<"y --> \"Year\" = Also show the year of production;\n";
+		std::cout<<"g --> \"Genre\" = Also show the genre;\n";
+		std::cout<<"p --> \"Plot\" = Also show the plot;\n";
+		std::cout<<"a --> \"Actors\" = Also show the principal actors;\n";
+		std::cout<<"w --> \"Watched\" = Only show -not watched- movies;\n";
+		std::cout<<"all --> Show every characteristic of the movie;\n";
 	}
 	else if(n == "1")
 		moviesCollection.toString("a", addenda);
@@ -158,7 +158,7 @@ void check(std::string n, Movies_Collection moviesCollection, Actors_Collection 
 	{
 		std::string searchName;
 		std::cout<<"***************************\n";
-		std::cout<<"COSA VUOI TROVARE?\n";
+		std::cout<<"WHAT DO YOU WANT TO FIND?\n";
 		std::getline(std::cin, searchName);
 		searchByName(searchName, moviesCollection, addenda);
 	}
@@ -166,7 +166,7 @@ void check(std::string n, Movies_Collection moviesCollection, Actors_Collection 
 	{
 		std::string searchYear;
 		std::cout<<"***************************\n";
-		std::cout<<"L'ANNO DEI FILM CHE VUOI CERCARE?\n";
+		std::cout<<"WHAT IS THE YEAR OF PRODUCTION OF THE MOVIES YOU WOULD LIKE TO FIND?\n";
 		std::cin>>searchYear;
 		searchByYear(std::atoi(searchYear.c_str()), moviesCollection, addenda);
 	}
@@ -174,7 +174,7 @@ void check(std::string n, Movies_Collection moviesCollection, Actors_Collection 
 	{
 		std::string searchGenre;
 		std::cout<<"***************************\n";
-		std::cout<<"IL GENERE DEI FILM CHE VUOI CERCARE?\n";
+		std::cout<<"WHAT IS THE GENRE OF THE MOVIES YOU WOULD LIKE TO FIND?\n";
 		std::cin>>searchGenre;
 		searchByGenre(searchGenre, moviesCollection, addenda);
 	}
@@ -182,7 +182,7 @@ void check(std::string n, Movies_Collection moviesCollection, Actors_Collection 
 	{
 		std::string searchActor;
 		std::cout<<"***************************\n";
-		std::cout<<"CHE ATTORE VUOI CONSIDERARE?\n";
+		std::cout<<"wHAT ACTOR WOULD YOU LIKE TO CONSIDER?\n";
 		std::getline(std::cin, searchActor);
 		searchByActor(searchActor, moviesCollection, actorsCollection, addenda);
 	}
@@ -190,7 +190,7 @@ void check(std::string n, Movies_Collection moviesCollection, Actors_Collection 
 	{
 		std::string searchCharacter;
 		std::cout<<"***************************\n";
-		std::cout<<"CHE PERSONAGGIO VUOI CONSIDERARE?\n";
+		std::cout<<"WHAT CHARACTER WOULD YOU LIKE TO CONSIDER?\n";
 		std::getline(std::cin, searchCharacter);
 		searchByCharacter(searchCharacter, moviesCollection, addenda);
 	}
@@ -198,20 +198,20 @@ void check(std::string n, Movies_Collection moviesCollection, Actors_Collection 
 	{
 		std::string search_actor;
 		std::cout<<"***************************\n";
-		std::cout<<"CHE ATTORE VUOI CERCARE? \n";
+		std::cout<<"WHAT ACTOR WOULD YOU LIKE TO SEARCH? \n";
 		std::getline(std::cin, search_actor);
 		searchActor(search_actor, actorsCollection);
 	}
 	else if(n == "r")
 	{
 		std::cout<<"***************************\n";
-		std::cout<<"IL FILM SCELTO PER TE E':\n\n";
+		std::cout<<"THE MOVIE CHOSEN FOR YOU IS:\n\n";
 		getRandomMovie(moviesCollection, addenda, "all");
 	}
 	else if(n == "rbg")
 	{
 		std::cout<<"***************************\n";
-		std::cout<<"SCRIVI IL GENERE DEL FILM CHE VUOI ESTRARRE CASUALMENTE:\n";
+		std::cout<<"WRITE THE GENRE OF THE MOVIE YOU WOULD LIKE TO RANDOMLY PICK:\n";
 		std::string searchGenre;
 		std::cin>>searchGenre;
 		std::cout<<"\n";
@@ -220,14 +220,14 @@ void check(std::string n, Movies_Collection moviesCollection, Actors_Collection 
 	else if(n == "rnw")
 	{
 		std::cout<<"***************************\n";
-		std::cout<<"IL FILM SCELTO PER TE E':\n\n";
+		std::cout<<"THE MOVIE CHOSEN FOR YOU IS:\n\n";
 		getRandomMovie(moviesCollection, addenda, "not watched");
 	}
 	else if(n == "stat")
 	{
 		std::cout<<"***************************\n";
-		std::cout<<"Numero di Film: "<<moviesCollection.movies.size()<<"\n";
-		std::cout<<"Numero di Film ancora da vedere: ";
+		std::cout<<"Number of movies: "<<moviesCollection.movies.size()<<"\n";
+		std::cout<<"Number of unwatched movies: ";
 		int n=0;
 		for(unsigned int i=0; i<moviesCollection.movies.size(); i++)
 			if(!moviesCollection.movies.at(i).watched)
@@ -259,10 +259,10 @@ void searchByName(std::string name, Movies_Collection moviesCollection, std::vec
 	}
 	else
 	{
-		std::cout<<"MI DISPIACE, MA NON E' PRESENTE NESSUN FILM CON IL NOME RICHIESTO\n";
+		std::cout<<"I'M SORRY, BUT NO SUCH MOVIE EXISTS\n";
 	}
 
-	std::cout<<"\n\nNumero di film trovati: "<<correspondences.movies.size()<<"\n";
+	std::cout<<"\n\n Number of movies found: "<<correspondences.movies.size()<<"\n";
 }
 
 void searchByYear(int year, Movies_Collection moviesCollection, std::vector<std::string> addenda)
@@ -299,7 +299,7 @@ void searchByGenre(std::string genre, Movies_Collection moviesCollection, std::v
 		correspondence.toString("a", addenda);
 	}
 	else
-		std::cout<<"MI DISPIACE, MA NON E' PRESENTE NESSUN FILM DEL GENERE RICHIESTO\n";
+		std::cout<<"I'M SORRY, BUT NO MOVIE OF THE REQUESTED GENRE EXISTS \n";
 
 	std::cout<<"\n\nNumero di film trovati: "<<correspondence.movies.size()<<"\n";
 }
@@ -369,6 +369,6 @@ void getRandomMovieGivenGenre(std::string genre, Movies_Collection moviesCollect
 		correspondence.movies.at(n).toString(addenda);
 	}
 	else
-		std::cout<<"MI DISPIACE MA NON ESISTONO FILM DEL GENERE CERCATO\n";
+		std::cout<<"I'M SORRY, BUT NO MOVIE OF THE REQUESTED GENRE EXISTS\n";
 }
 
