@@ -11,7 +11,7 @@ One can "add movies" by adding:
 
 The program automatically creates a collection of actors once it has read all the movies stored.
 
-There are lots of functionality to display all the movies stored:
+There are lots of functionalities to display all the movies stored:
 
 * Show movies alphabetically ordered;
 * Show movies by year of production;
